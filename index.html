@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Dial</title>
+    <link rel="stylesheet"  href="../../bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <script src="../../bootstrap-5.3.2-dist/js/bootstrap.min.js"> </script>
+<style>
+    .main{
+        border-left: 50px solid lightgray;
+        border-right: 20px solid lightgray;
+    }
+
+
+    .header{
+        padding:20px;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+    }
+
+
+    .location-input {
+        padding: 20px 30px 20px 20px; 
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none; 
+        width: 300px; 
+        background-color: lightgray;
+    }
+
+    .location-input::placeholder {
+        color: black; 
+    }
+
+    .location-icon {
+        position: absolute;
+        top: 45px;
+        width: 20px;
+        height: 20px;
+        background-image: url('./Images/location.png');
+        background-size: cover;
+        margin-left: -340px;
+        border-radius: 100%;
+    }
+
+    .location-input,.Search-input {
+        padding: 10px 30px 10px 10px; 
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 300px; 
+    }
+
+    .Search-icon {
+        position: absolute;
+        top: 37px;
+        width: 40px;
+        height: 35px;
+        background-image: url('./Images/Search.jpg');
+        background-size: cover;
+        margin-left: -50px;
+    }
+
+    .Mic-icon {
+        position: absolute;
+        top: 37px;
+        width: 25px;
+        height: 25px;
+        background-image: url('./Images/micicon.png');
+        background-size: cover;
+        margin-left: -90px;
+        border-radius: 80%;
+    }
+
+
+    .container:hover {
+         background-color: lightslategrey;
+    }
+
+    .container{
+    width: 120px;
+    display: inline
+    }
+
+    .login{
+        color: whitesmoke;
+    }
+
+    .login:hover {
+        background-color: lightslategrey;
+    }
+
+    .div2{
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+        
+    }
+
+    .text-container {
+            position: absolute;
+            color: rgb(255, 255, 259);
+            left: 30rem;
+            top: 12rem;
+            padding: 0 1rem;
+            text-align: center;
+    }
+
+    .booktbl:hover{
+        background-color: lightgray;
+    }
+
+    .booktbl{
+        height: 80px;
+        width: 250px;
+        border: 1px solid;
+        background-color: whitesmoke;
+        position: absolute; 
+        margin-top: -30px;
+        margin-left: 120px;
+        border-radius: 30px;
+        line-height:0px;
+        vertical-align: middle;
+    }
+
+    .btl{
+        margin-left: 100px;
+        margin-top: -30px;
+    }
+    .mar{
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+
+    .whattrend:hover{
+        background-color: lightgray;
+    }
+
+    .whattrend{
+        height: 80px;
+        width: 300px;
+        border: 1px solid;
+        background-color: whitesmoke;
+        position: absolute;
+        margin-top: -30px;
+        margin-left: 500px;
+        border-radius: 30px;
+        line-height:0px;
+        vertical-align: middle;
+    }
+
+    .wtd{
+        margin-left: 100px;
+        margin-top: -40px;
+    }
+
+    .tiy{
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+
+    .orderfood:hover{
+        background-color: lightgray;
+    }
+
+    .orderfood{
+        height: 80px;
+        width: 250px;
+        border: 1px solid;
+        background-color: whitesmoke;
+        position: absolute;
+        margin-top: -30px;
+        margin-left: 920px;
+        border-radius: 30px;
+        line-height:0px;
+        vertical-align: middle;
+    }
+
+    .ord{
+        margin-left: 100px;
+        margin-top: -40px;
+    }
+
+    .res{
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+
+    .div3{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        height: 300px;
+        width: 1400px;
+        margin: 18px;
+        margin-top: 120px;
+        column-gap: 30px;
+    }
+
+    .col1{
+        height: 300px;
+        border-radius: 10%;
+    }
+    
+    .img1{
+        border-radius: 10%;
+        
+    }
+
+    .div3 img:hover {
+            transform: scale(1.2);
+        }
+
+    .col2 img:hover {
+            transform: scale(1.2);
+        }
+
+    .col2 {
+            display: inline-block;
+            border: 1px solid black;
+            overflow: hidden;           
+        }
+
+    .col2 img {
+            display: block;
+            transition: transform .2s;  
+    }
+
+    .ul1:hover {
+            padding-top: 10px;
+            transition-duration: 0.2s;
+            color: blue;
+    }
+    .ul2:hover {
+            padding-top: 10px;
+            transition-duration: 0.2s;
+            color: blue;
+    }
+    .ul3:hover {
+            padding-top: 10px;
+            transition-duration: 0.2s;
+            color: blue;
+    }
+    .ul4:hover {
+            padding-top: 10px;
+            transition-duration: 0.2s;
+            color: blue;
+    }
+    .ul5:hover {
+            padding-top: 10px;
+            transition-duration: 0.2s;
+            color: blue;
+    }
+    .li1:hover {
+            padding-top: 10px;
+            transition-duration: 0.2s;
+            color: blue;
+    }
+
+    .b1:hover{
+        color: blue;
+        padding-top: 10px;
+        transition-duration: 0.2s;
+        text-decoration: underline;
+    }
+
+    a:link{
+        text-decoration: none;
+        background-color:white 
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: white;
+        background-color: blue;
+    }
+
+    a:active {
+        background-color: white;
+        text-decoration: underline;
+    }
+
+    a{
+        color: white;
+        background-color: blue;
+    }
+
+    .vac{
+        height: 50px;
+        border: 1px solid;
+        width: 400px;
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 11px;
+        margin: auto;
+        background-color: blue;
+        color: whitesmoke;
+        font-size: larger;
+    }
+
+
+    .word {
+        display: inline-block;
+        margin-right: 5px; 
+        cursor: pointer; 
+    }
+
+    .pipeline {
+        margin-right: 5px; 
+    }
+
+    .grid-item:hover {
+        color: skyblue;
+        text-decoration: underline;
+    }
+
+    .word:hover {
+        color: skyblue;
+        text-decoration: underline;
+    }
+
+    .pc{
+        margin-left: 15px;
+        margin-right: 65px;
+        font-size: medium;
+        margin-top: 70px;
+        border-top: 0.1px solid silver;
+        border-bottom: 0.1px solid silver;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: gray;
+    }
+    
+    .fuo{
+        margin-left: 15px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .foui{
+        border-radius: 200px;
+    }
+
+    .foui,.store:hover{
+        opacity: 0.6;
+    }
+
+    .store{
+        padding-left: 1210px;
+        padding-top: -10px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(7, 35px);
+        margin-top: 15px;
+        font-size: small;
+        color: grey;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    .grid-header {
+        grid-column: span 2; 
+        padding: 10px;
+    }
+
+    .grid-item,.tac{
+        font-size: medium;
+    }
+
+    .food1{
+        background-color: white;
+        color: black;
+    }
+
+    .food1:hover{
+        background-color: white;
+    }
+    .pca{
+        background-color: white;
+        color: grey;
+    }
+    .pca:hover{
+        background-color: white;
+    }
+
+    .byt{
+        background-color: whitesmoke;
+        color: black;
+    }
+
+    .byt:hover{
+        background-color: lightgray;
+    }
+
+</style>
+</head>
+<body>
+    <div class="main">
+
+        <div class="header head">
+            <img src="./Images/justdial-logo.png" height="40px" width="80px">
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="text" id="locationInput" class="location-input" placeholder="&emsp;&emsp;HYDERABAD">
+            <span class="location-icon"></span>
+            &emsp;
+            <input type="text" id="Searchicon" class="Search-input" placeholder="Search" style="width: 400px;">
+            <span class="Search-icon"></span>
+            <span class="Mic-icon"></span>
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+    
+            <div class="container" >
+                <img src="./Images/Advert.jpg" alt="Avatar" class="image"  height="20px" width="20px"><a href="https://www.justdial.com/Advertise?cta_from=W_hmpge_web_header_advertise&source=77">Advertise</a>
+            </div>
+
+            <div class="container" >
+                <img src="./Images/graph.png" alt="Avatar" class="image"  height="20px" width="20px"><a href="https://www.justdial.com/Free-Listing?source=77&cta_from=W_hmpge_web_header_freelisting">Free Listing</a>
+            </div>
+
+            <div class="container" >
+                <img src="./Images/Alarmicon.png" alt="Avatar" class="image"  height="20px" width="20px">
+            </div>
+
+            <span class="Login" style="background-color: blue; width: 120px; height:50px; color: whitesmoke;"><a href="https://www.justdial.com/"> Login / Sign Up</a>
+            </span>
+        </div>
+
+        <div class="div2">
+            <img src="./Images/Foodmain.jpg" style="height: 350px; width: 1400px; z-index: -11;opacity: 0.9;">
+            
+            <div class="text-container">
+                <h1><b>IT'S ALL ABOUT FOOD</b></h1>
+            </div>
+            
+            <div class="booktbl">
+                &emsp;<a href="https://www.justdial.com/Hyderabad/Restaurants/nct-10408936?filters=[{%22e%22:%224%22,%22v%22:[%22res364%22],%22mh%22:[%22BookaTable%22]}]"><img src="./Images/Boook.png" height="50px" style="padding-top: 10px;"></a>
+                   <div class="btl"><b><a class="byt" href="https://www.justdial.com/Hyderabad/Restaurants/nct-10408936?filters=[{%22e%22:%224%22,%22v%22:[%22res364%22],%22mh%22:[%22BookaTable%22]}]">Book A Table</b></a></div> <div class="mar"> Make a Reservation <b>></b></div>
+            </div>
+            
+            <div class="whattrend">
+                &emsp;<a href="https://www.justdial.com/Hyderabad/Trending-Restaurants/nct-11263749"> <img src="./Images/Servefood.png" height="65px" style="padding-top: 10px;"></a>
+                <div class="wtd"> <b><a class="byt" href="https://www.justdial.com/Hyderabad/Trending-Restaurants/nct-11263749">WHAT'S TRENDING?</b></div> <div class="tiy"> Try it Yourself <b>></b></a></div>
+            </div>
+
+            <div class="orderfood">
+                &emsp; <a href="https://www.justdial.com/Hyderabad/Trending-Restaurants/nct-11263749"><img src="./Images/Orderfood.png" height="60px" style="padding-top: 10px;"></a>
+                <div class="ord"><a class="byt" href="https://www.justdial.com/Hyderabad/Trending-Restaurants/nct-11263749"> <b>ORDER FOOD</b></div> <div class="res"> 5830 Restaurants <b>></b></a></div>
+            </div>   
+        </div>
+
+        <div class="div3">
+            <div class="col1 col2">
+                <a href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"><img class="img1" src="./Images/indianflav.webp" title="Indian Flavours" height="120" width="210"></a>
+            </br>
+            <a class="food1" href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"><b class="b1" style="margin: 15px;">Indian Flavours</b></a>
+
+                <ul>
+                    <li class="ul5">Dhaba</li>
+                    <li class="ul2">Pure Veg</li>
+                    <li class="ul3">Biriyani</li>
+                    <li class="ul4">North Indian</li>
+                    <li class="li1" style="color: blue;">More</li>
+                </ul>
+
+            </div>
+
+
+            <div class="col1 col2">
+                <a href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"> <img class="img1" src="./Images/Globalcuisin.jpg" title="Global Cuisines" height="120" width="210"></a>
+            </br>
+            <a class="food1" href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"> <b class="b1" style=" margin-top: 10px">Global Cuisines</b></a>
+
+                <ul>
+                    <li class="ul5">Japanese</li>
+                    <li class="ul2">Continental</li>
+                    <li class="ul3">Italian</li>
+                    <li class="ul4">Chinese</li>
+                    <li class="li1" style="color: blue;">More</li>
+                </ul>
+
+            </div>
+
+
+            <div class="col1 col2">
+                <a href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018">  <img class="img1" src="./Images/Nightlife.jpg" title="Nightlife" height="120" width="210"></a>
+            </br>
+            <a class="food1" href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"> <b class="b1" style="margin: 15px;  margin-top: 100px; padding-top: 100px;">NightLife</b></a>
+
+                <ul>
+                    <li class="ul5">Pubs</li>
+                    <li class="ul2">Lounge Bars</li>
+                    <li class="ul3">Night Clubs</li>
+                    <li class="ul4">Restaurants& Bars</li>
+                    <li class="li1" style="color: blue;">More</li>
+                </ul>
+
+            </div>
+            <div class="col1 col2">
+                <a href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018">  <img class="img1" src="./Images/Quivkbite.jpg" title="Quick Bites" height="120px" width="210"></a>
+            </br>
+            <a class="food1" href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"> <b class="b1" style="margin: 10px;  margin-top: 100px; padding-top: 100px;">Quick Bites</b></a>
+
+                <ul>
+                    <li class="ul5">Fast Food</li>
+                    <li class="ul2">Bakeries</li>
+                    <li class="ul3">Coffee Shops</li>
+                    <li class="ul4">Pizza Outlets</li>
+                    <li class="li1" style="color: blue;">More</li>
+                </ul>
+
+            </div>
+
+            <div class="col1 col2">
+                <a href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018">   <img class="img1" src="./Images/sweettoo.jpg" title="Sweet Tooth" height="120" width="210"></a>
+            </br>
+            <a class="food1" href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"> <b class="b1" style="margin: 10px;  margin-top: 100px; padding-top: 100px;">Sweet Tooth</b></a>
+
+                <ul>
+                    <li class="ul5">Cake Shops</li>
+                    <li class="ul2">Desserts</li>
+                    <li class="ul3">Donut Outlets</li>
+                    <li class="li1" style="color: blue;">More</li>
+                </ul>
+
+            </div>
+            
+            <div class="col1 col2">
+                <a href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018">  <img class="img1" src="./Images/Foodie.jpg" title="Foodies" height="120" width="210"></a>
+            </br>
+            <a class="food1" href="https://www.justdial.com/Hyderabad/Biryani-Restaurants/nct-10047018"> <b class="b1" style="margin: 10px;  margin-top: 100px; padding-top: 100px;">Foodies</b></a>
+
+                <ul>
+                    <li class="ul5">Chinese</li>
+                    <li class="ul2">Irani Cafes</li>
+                    <li class="ul3">Poolside Dining</li>
+                    <li class="ul4">Veggie Only</li>
+                    <li class="li1" style="color: blue;">More</li>
+                </ul>
+
+            </div>
+        </div>
+        <br></br>
+        <div class="vac">
+           <a href="https://www.justdial.com/Mumbai/Restaurant-Collections/AllCategory?q=All%20Category"> View All Categories</a>
+        </div>
+        
+        <div class="pc">
+            <b style="font-size: 20px; color: black;">Popular Categories</b>
+            <br/> <br/>
+
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Body Massage Centres</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Cinema Halls</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Schools</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Beauty Spas</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Dermatologists</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Hospitals</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Malls</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Gyms</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Beauty Parlours</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Estate Agents</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Banquet Halls</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">ENT Doctors</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Book Shops</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Bike On Rent</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"> <span class="word">Sexologist Doctors</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Neurologists</span></a>
+            <span class="pipeline">|</span>
+            <a class="pca" href="https://www.justdial.com/Hyderabad/Body-Massage-Centres/nct-10050521"><span class="word">Gynaecologist & Obstetrician Doctors</span></a>
+            <span class="pipeline">|</span>
+            <span class="word">Tiffin Services</span>
+            <span class="pipeline">|</span>
+            <span class="word">Travel Agents</span>
+            <span class="pipeline">|</span>
+            <span class="word">Paying Guest Accommodations</span>
+            <span class="pipeline">|</span>
+            <span class="word">General Physician Doctors</span>
+            <span class="pipeline">|</span>
+            <span class="word">Dentists</span>
+            <span class="pipeline">|</span>
+            <span class="word">Orthopaedic Doctors</span>
+            <span class="pipeline">|</span>
+            <span class="word">Chemists</span>
+            <span class="pipeline">|</span>
+            <span class="word">Gastroenterologists</span>
+            <span class="pipeline">|</span>
+            <span class="word">Car Rental</span>
+            <span class="pipeline">|</span>
+            <span class="word">Salons</span>
+            <span class="pipeline">|</span>
+            <span class="word">Courier Services</span>
+            <span class="pipeline">|</span>
+            <span class="word">Dance Classes</span>
+            <span class="pipeline">|</span>
+            <span class="word">Pathology Labs</span>
+            <span class="pipeline">|</span>
+            <span class="word">Taxi Services</span>
+            <span class="pipeline">|</span>
+            <span class="word">Cake Shops</span>
+            <span class="pipeline">|</span>
+            <span class="word">AC Repair & Services</span>
+            <span class="pipeline">|</span>
+            <span class="word">Mobile Phone Dealers</span>
+            <span class="pipeline">|</span>
+            <span class="word">Pet Shops</span>
+            <span class="pipeline">|</span>
+            <span class="word">Dmart</span>
+            <span class="pipeline">|</span>
+            <span class="word">Packers And Movers</span>
+            <span class="pipeline">|</span>
+            <span class="word">Psychiatrists</span>
+            <span class="pipeline">|</span>
+            <span class="word">Dharamshalas</span>
+            <span class="pipeline">|</span>
+            <span class="word">Urologist Doctors</span>
+            <span class="pipeline">|</span>
+            <span class="word">Bakeries</span>
+            <span class="pipeline">|</span>
+            <span class="word">Bicycle Dealers</span>
+            <span class="pipeline">|</span>
+            <span class="word">Coffee Shops</span>
+            <span class="pipeline">|</span>
+            <span class="word">Paediatricians</span>
+        </div>
+
+        <div class="fuo">
+            
+            Follow us on
+
+            <img  class="foui" src="./Images/facebook.jpg" height="30px">
+            <img  class="foui" src="./Images/youtube.png" height="30px">
+            <img  class="foui" src="./Images/insta.jpg" height="30px">
+            <img  class="foui" src="./Images/linked in.png" height="30px">
+            <img  class="foui" src="./Images/x logo.png" height="30px">
+            <span class="store">
+            <img src="./Images/gietplay.png" height="50px">
+            <img src="./Images/appstore.png" height="30px"></span>
+        </div>
+
+        <div class="pc">
+            <b style="font-size: 20px;  color: black;">Explore JD Collections</b>
+            <br/> <br/>
+
+            <span class="word">Travel & Tourism</span>
+            <span class="pipeline">|</span>
+            <span class="word">Beauty & Fashion</span>
+            <span class="pipeline">|</span>
+            <span class="word">Health & Fitness</span>
+            <span class="pipeline">|</span>
+            <span class="word">Food & Beverage</span>
+            <span class="pipeline">|</span>
+            <span class="word">Finance</span>
+            <span class="pipeline">|</span>
+            <span class="word">On demand Services</span>
+            <span class="pipeline">|</span>
+            <span class="word">Home & Living</span>
+            <span class="pipeline">|</span>
+            <span class="word">Education & Career</span>
+            <span class="pipeline">|</span>
+            <span class="word">Recreation</span>
+        </div>
+
+        <div class="grid-container">
+
+            <div class="grid-header" style="color: black; font-size: medium;"><b>Quick Links</b></div>      
+            <div class="grid-header" style="color: black; font-size: medium;"><b>Jd Verticals</b></div>
+            <div class="grid-header"></div>
+            <div class="grid-header"></div>
+        
+              <div class="grid-item">About us</div>
+              <div class="grid-item">Advertise</div>
+              <div class="grid-item">B2B</div>
+              <div class="grid-item">All India</div>
+              <div class="grid-item">Restaurants</div>
+              <div class="grid-item">Doctors</div>
+              <div class="grid-item">Hospitals</div>
+              <div class="grid-item">Schools</div>
+              
+              <div class="grid-item">Investor Relations</div>
+              <div class="grid-item">Media</div>
+              <div class="grid-item">Colleges</div>
+              <div class="grid-item">AC Repair</div>
+              <div class="grid-item">Car Services</div>
+              <div class="grid-item">Hotels</div>
+              <div class="grid-item">Real Estate</div>
+              <div class="grid-item">Bills & Recharge</div>
+          
+              <div class="grid-item">We're hiring</div>
+              <div class="grid-item">Testimonials</div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+                    
+              <div class="grid-item">Customer Care</div>
+              <div class="grid-item">Feedback</div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+          
+              <div class="grid-item">Free Listing</div>
+              <div class="grid-item">Business Badge</div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+                    
+              <div class="grid-item">What's New</div>
+              <div class="grid-item">Jd Curated list</div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+
+              <div class="grid-item">Report a Bug</div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+              <div class="grid-item"></div>
+        </div>
+        <div class="tac">
+            Copyrights 2008-24.All Rights Reserved. 
+            <span class="word">Privacy</span>
+            <span class="pipeline">|</span>
+            <span class="word">Terms</span>
+            <span class="pipeline">|</span>
+            <span class="word">Infringement</span>
+        </div>
+
+    </div>
+</body>
+</html>
